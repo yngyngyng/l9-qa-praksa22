@@ -7,8 +7,6 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import java.util.List;
-
 public class DefaultTests {
     WebDriver driver = new ChromeDriver();
 
