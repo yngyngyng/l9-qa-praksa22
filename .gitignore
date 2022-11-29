@@ -1,0 +1,14 @@
+# IntelliJ IDEA
+.gradle/
+build/
+build-cache
+.idea
+.DS_Store
+
+# Log file
+*.log
+cache/
+logs
+
+#Test Output
+test-output

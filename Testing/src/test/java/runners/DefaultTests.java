@@ -5,18 +5,16 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 import java.util.List;
 
 public class DefaultTests {
-    WebDriver driver = new ChromeDriver();
+    WebDriver driver;
 
     @BeforeMethod
     public void setupClass() {
+        this.driver = new ChromeDriver();
         String loginPage = "https://saucedemo.com";
         driver.get(loginPage);
     }
@@ -30,8 +28,6 @@ public class DefaultTests {
     public void firstTest() {
         Assert.assertEquals(driver.getTitle(), "Swag Labs");
     }
-
-
 
     @Test
     public void loginTest() {
@@ -60,7 +56,7 @@ public class DefaultTests {
         addItemToCart();
         WebElement removeItemFromCart = driver.findElement(By.id("remove-sauce-labs-backpack"));
         removeItemFromCart.click();
-        By shoppingCartBadge = By.className("shopping_cart_badge");
-        Assert.assertFalse(driver.findElement(shoppingCartBadge).isDisplayed());
+        List<WebElement> cartBadges = driver.findElements(By.className("shopping_cart_badge"));
+        Assert.assertEquals(cartBadges.stream().count(),0);
     }
 }

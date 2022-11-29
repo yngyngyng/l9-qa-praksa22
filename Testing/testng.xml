@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Saucedemo Suite">
+    <test name="e2eTests">
+        <classes>
+            <class name="runners.e2e.e2eStandardUserTests"/>
+        </classes>
+    </test>
+    <test name="ItemListPage">
+        <classes>
+            <class name="runners.ItemListPage.ItemListStandardUserTests"/>
+            <class name="runners.ItemListPage.ItemListProblemUserTests"/>
+        </classes>
+    </test>
+    <test name="LoginPage">
+        <classes>
+            <class name="runners.LoginPage.LoginTests"/>
+        </classes>
+    </test>
+    <test name="DefaultTests">
+        <classes>
+            <class name="runners.DefaultTests"/>
+        </classes>
+    </test>
+</suite>
